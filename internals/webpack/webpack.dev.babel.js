@@ -9,6 +9,11 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 module.exports = require('./webpack.base.babel')({
   mode: 'development',
+  target: 'node',
+
+  node: {
+    fs: 'empty',
+  },
 
   // Add hot reloading in development
   entry: [

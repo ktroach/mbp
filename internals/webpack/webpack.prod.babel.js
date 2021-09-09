@@ -9,6 +9,11 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = require('./webpack.base.babel')({
   mode: 'production',
+  target: 'node',
+
+  node: {
+    fs: 'empty',
+  },
 
   // In production, we skip all hot-reloading stuff
   entry: [

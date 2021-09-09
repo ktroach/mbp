@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 
 import layoutStyles from 'containers/Layout/styles';
 import PageBase from 'components/PageBase';
 
 import styles from './styles';
+
+import Stuff from '../stuff';
 
 class DashboardPage extends React.PureComponent {
   state = { loading: true };
@@ -25,9 +27,10 @@ class DashboardPage extends React.PureComponent {
       <PageBase title="Dashboard" minHeight={500} loading={loading}>
         {!loading && (
           <div>
-            <Typography variant="h5">
-              Construction Projects
-            </Typography>
+            {/* <Typography variant="h5">
+              Current Projects
+            </Typography> */}
+            <Stuff />
           </div>
         )}
       </PageBase>
