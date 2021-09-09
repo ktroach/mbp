@@ -6,6 +6,11 @@ import Icon from '@material-ui/core/Icon';
 import DashboardPage from 'containers/Pages/DashboardPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import SchedulePage from 'containers/Pages/Schedule/Loadable';
+import CustomersPage from 'containers/Pages/Customers/Loadable';
+import EmployeesPage from 'containers/Pages/Employees/Loadable';
+import ProspectsPage from 'containers/Pages/Prospects/Loadable';
+import ReadyToClosePage from 'containers/Pages/ReadyToClose/Loadable';
+import SoldPage from 'containers/Pages/Sold/Loadable';
 
 // Menu tree
 const Menu = [
@@ -20,30 +25,24 @@ const Menu = [
     id: 'prospects',
     text: 'Prospects',
     icon: <Icon>assignmentind</Icon>,
-    url: '/',
-    component: DashboardPage,
+    url: '/prospects',
+    component: ProspectsPage,
   },
   {
     id: 'ready-to-close',
     text: 'Ready to Close',
     icon: <Icon>assessment</Icon>,
-    url: '/',
-    component: DashboardPage,
+    url: '/ready-to-close',
+    component: ReadyToClosePage,
   },
   {
     id: 'sold',
     text: 'Sold/Closed',
     icon: <Icon>house</Icon>,
-    url: '/',
-    component: DashboardPage,
+    url: '/sold-closed',
+    component: SoldPage,
   },
-  {
-    id: 'customers',
-    text: 'Customers',
-    icon: <Icon>people</Icon>,
-    url: '/',
-    component: DashboardPage,
-  },
+
   {
     id: 'schedule',
     text: 'Schedule',
@@ -51,12 +50,21 @@ const Menu = [
     url: '/schedule',
     component: SchedulePage,
   },
+
   {
-    id: 'storage',
+    id: 'customers',
+    text: 'Customers',
+    icon: <Icon>people</Icon>,
+    url: '/customers',
+    component: CustomersPage,
+  },
+
+  {
+    id: 'employees',
     text: 'Employees',
     icon: <Icon>manager</Icon>,
-    url: '/',
-    component: DashboardPage,
+    url: '/employees',
+    component: EmployeesPage,
   },
 ];
 

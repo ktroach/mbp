@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
-// import Typography from '@material-ui/core/Typography';
 
 import layoutStyles from 'containers/Layout/styles';
 import PageBase from 'components/PageBase';
@@ -11,9 +10,7 @@ import styles from './styles';
 
 import Stuff from '../stuff';
 
-// import Uploader from '../uploader';
-
-class DashboardPage extends React.PureComponent {
+class EmployeesPage extends React.PureComponent {
   state = { loading: true };
 
   componentDidMount() {
@@ -26,13 +23,9 @@ class DashboardPage extends React.PureComponent {
     const { loading } = this.state;
 
     return (
-      <PageBase title="In-Progress" minHeight={500} loading={loading}>
+      <PageBase title="Employees" minHeight={500} loading={loading}>
         {!loading && (
           <div>
-            {/* <Typography variant="h5">
-              Current Projects
-            </Typography> */}
-            {/* <Uploader /> */}
             <Stuff />
           </div>
         )}
@@ -41,7 +34,7 @@ class DashboardPage extends React.PureComponent {
   }
 }
 
-DashboardPage.propTypes = {
+EmployeesPage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
@@ -51,4 +44,4 @@ export default withStyles(
     ...styles(theme),
   }),
   { withTheme: true },
-)(DashboardPage);
+)(EmployeesPage);

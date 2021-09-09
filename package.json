@@ -102,6 +102,7 @@
     "react-router-dom": "5.0.0",
     "react-swipeable-views": "^0.13.3",
     "react-table": "^6.11.4",
+    "reactjs-file-uploader": "^1.0.8",
     "recharts": "^1.8.5",
     "redux": "4.0.1",
     "redux-saga": "1.0.2",

@@ -11,9 +11,7 @@ import styles from './styles';
 
 import Stuff from '../stuff';
 
-// import Uploader from '../uploader';
-
-class DashboardPage extends React.PureComponent {
+class CustomerPage extends React.PureComponent {
   state = { loading: true };
 
   componentDidMount() {
@@ -26,13 +24,9 @@ class DashboardPage extends React.PureComponent {
     const { loading } = this.state;
 
     return (
-      <PageBase title="In-Progress" minHeight={500} loading={loading}>
+      <PageBase title="Customers" minHeight={500} loading={loading}>
         {!loading && (
           <div>
-            {/* <Typography variant="h5">
-              Current Projects
-            </Typography> */}
-            {/* <Uploader /> */}
             <Stuff />
           </div>
         )}
@@ -41,7 +35,7 @@ class DashboardPage extends React.PureComponent {
   }
 }
 
-DashboardPage.propTypes = {
+CustomerPage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
@@ -51,4 +45,4 @@ export default withStyles(
     ...styles(theme),
   }),
   { withTheme: true },
-)(DashboardPage);
+)(CustomerPage);
