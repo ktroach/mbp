@@ -5,6 +5,7 @@ import Icon from '@material-ui/core/Icon';
 // Components
 import DashboardPage from 'containers/Pages/DashboardPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import SchedulePage from 'containers/Pages/Schedule/Loadable';
 
 // Menu tree
 const Menu = [
@@ -32,7 +33,7 @@ const Menu = [
   {
     id: 'sold',
     text: 'Sold/Closed',
-    icon: <Icon>payment</Icon>,
+    icon: <Icon>house</Icon>,
     url: '/',
     component: DashboardPage,
   },
@@ -47,13 +48,13 @@ const Menu = [
     id: 'schedule',
     text: 'Schedule',
     icon: <Icon>today</Icon>,
-    url: '/',
-    component: DashboardPage,
+    url: '/schedule',
+    component: SchedulePage,
   },
   {
     id: 'storage',
-    text: 'Files',
-    icon: <Icon>storage</Icon>,
+    text: 'Employees',
+    icon: <Icon>manager</Icon>,
     url: '/',
     component: DashboardPage,
   },
