@@ -33,7 +33,7 @@ class DashboardPage extends React.PureComponent {
               Current Projects
             </Typography> */}
             {/* <Uploader /> */}
-            <Stuff />
+            <Stuff title="" />
           </div>
         )}
       </PageBase>

@@ -47,7 +47,8 @@ const api = axios.create({
   baseURL: `https://kyle-sb-api.herokuapp.com/api/v1`,
 });
 
-function Stuff() {
+
+function Stuff(props) {
   const columns = [
     { title: 'id', field: 'id', hidden: true },
     { title: 'Stuff Name', field: 'stuffName' },
@@ -122,6 +123,8 @@ function Stuff() {
     showTextRowsSelected: false,
   };
 
+  const title = (props && props.title) ? props.title : "";
+
   return (
     <>
       <div className="stuff-container">
@@ -139,7 +142,7 @@ function Stuff() {
                             } */}
         </div>
         <MaterialTable
-          title="Current Projects"
+          title={title}
           columns={columns}
           data={data}
           icons={tableIcons}
