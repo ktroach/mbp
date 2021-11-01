@@ -16,6 +16,13 @@ const makeSelectAuthenticationErrorMessage = () =>
     state => state.authenticationErrorMessage,
   );
 
+// User  
+const makeSelectUser = () =>
+  createSelector(
+    selectGlobal,
+    state => state.user,
+  );
+
 // Menu
 const makeSelectLocation = () =>
   createSelector(
@@ -85,4 +92,5 @@ export {
   makeSelectShowOpenView,
   makeSelectShowHeaderTabs,
   makeSelectShowSearch,
+  makeSelectUser,
 };

@@ -23,25 +23,55 @@ export function* fetchSignIn(action) {
   try {
     const { payload } = action;
     // here you can call your API in order to authenticate the user
-    if (payload.email === 'demo@test.com' && payload.password === 'demo') {
+    if (payload.email === 'kyle.roach.apple@gmail.com' && payload.password === 'password') {
+      yield put({
+        type: AUTHENTICATED,
+        user: {
+          name: 'Kyle Roach',
+          email: action.payload.email,
+          initials: 'KR',
+          role: 'admin'
+        },
+      });
+    } else if (
+      payload.email === 'toni.williams@gmail.com' &&
+      payload.password === 'password'
+    ) {
+      yield put({
+        type: AUTHENTICATED,
+        user: {
+          name: 'Toni Williams',
+          email: action.payload.email,
+          initials: 'TW',
+          role: 'admin'
+        },
+      });
+    } else if (
+      payload.email === 'willie.clark@gmail.com' &&
+      payload.password === 'password'
+    ) {
+      yield put({
+        type: AUTHENTICATED,
+        user: {
+          name: 'Willie Clark',
+          email: action.payload.email,
+          initials: 'WC',
+          role: 'builder'
+        },
+      });   
+    } else if (
+      payload.email === 'john.smith@gmail.com' &&
+      payload.password === 'password'
+    ) {
       yield put({
         type: AUTHENTICATED,
         user: {
           name: 'John Smith',
           email: action.payload.email,
+          initials: 'JS',
+          role: 'customer'
         },
-      });
-    } else if (
-      payload.email === 'demo2@test.com' &&
-      payload.password === 'demo2'
-    ) {
-      yield put({
-        type: AUTHENTICATED,
-        user: {
-          name: 'Jane Doe',
-          email: action.payload.email,
-        },
-      });
+      });           
     } else {
       yield put({
         type: AUTHENTICATION_FAILED,

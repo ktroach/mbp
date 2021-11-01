@@ -113,6 +113,7 @@ class Header extends React.Component {
       handleDrawerToggle,
       showHeaderTabs,
       showSearch,
+      user
     } = this.props;
     const calculatedOpenViews = this.getCalculatedOpenViews();
     const calculatedSelectedMenuItem = this.getCalculatedSelectedMenuItem(
@@ -133,6 +134,7 @@ class Header extends React.Component {
           handleDrawerToggle={handleDrawerToggle}
           handleCloseView={this.handleCloseView}
           handleTabChange={this.handleTabChange}
+          user={user}
         />
         {showHeaderTabs && calculatedSelectedMenuItem.children ? (
           <HeaderSubTabs

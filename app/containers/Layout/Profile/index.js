@@ -39,18 +39,20 @@ class Profile extends React.Component {
 
   render() {
     const { anchorEl } = this.state;
-    const { classes, drawerIsOpen } = this.props;
+    const { classes, drawerIsOpen, user } = this.props;
     const open = Boolean(anchorEl);
+    const userName = user ? user.name : '';
+    const userInitials = user ? user.initials : '';
 
     return (
       <div>
-        <Tooltip title="Willie Clark">
+        <Tooltip title={userName}>
           <IconButton
             aria-owns={drawerIsOpen ? 'menu-appbar' : null}
             aria-haspopup="true"
             onClick={this.handleMenu}
           >
-            <Avatar className={classes.avatar}>WC</Avatar>
+            <Avatar className={classes.avatar}>{userInitials}</Avatar>
           </IconButton>
         </Tooltip>
         <Menu
@@ -81,6 +83,7 @@ Profile.propTypes = {
   classes: PropTypes.object.isRequired,
   drawerIsOpen: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired,
+  user: PropTypes.object
 };
 
 const mapDispatchToProps = dispatch => ({

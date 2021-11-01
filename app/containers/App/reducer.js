@@ -26,8 +26,10 @@ openedViews.push(selectedMenuItem);
 // The initial state of the App
 export const initialState = {
   user: {
-    name: 'John Smith',
-    email: 'demo@test.com',
+    name: '',
+    email: '',
+    initials: '',
+    role: ''
   },
   userIsAuthenticated: true,
   authenticationErrorMessage: '',

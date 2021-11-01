@@ -9,7 +9,7 @@ import PageBase from 'components/PageBase';
 
 import styles from './styles';
 
-import Stuff from '../stuff';
+import Homes from '../homes';
 
 // import Uploader from '../uploader';
 
@@ -29,11 +29,7 @@ class DashboardPage extends React.PureComponent {
       <PageBase title="In-Progress" minHeight={500} loading={loading}>
         {!loading && (
           <div>
-            {/* <Typography variant="h5">
-              Current Projects
-            </Typography> */}
-            {/* <Uploader /> */}
-            <Stuff title="" />
+            <Homes title="" />
           </div>
         )}
       </PageBase>

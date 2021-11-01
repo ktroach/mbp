@@ -42,6 +42,7 @@ class HeaderTabs extends React.Component {
       handleDrawerToggle,
       handleCloseView,
       handleTabChange,
+      user
     } = this.props;
 
     return (
@@ -80,7 +81,7 @@ class HeaderTabs extends React.Component {
             <SearchIcon />
           </IconButton>
           <SettingsButton />
-          <Profile drawerIsOpen={drawerIsOpen} />
+          <Profile drawerIsOpen={drawerIsOpen} user={user} />
         </Toolbar>
       </AppBar>
     );
@@ -98,6 +99,7 @@ HeaderTabs.propTypes = {
   handleDrawerToggle: PropTypes.func.isRequired,
   handleTabChange: PropTypes.func.isRequired,
   handleCloseView: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
 };
 
 export default withStyles(theme => layoutStyles(theme), {

@@ -10,6 +10,7 @@ import Register from 'components/Auth/register';
 import {
   makeSelectUserIsAuthenticated,
   makeSelectAuthenticationErrorMessage,
+  makeSelectUser
 } from 'containers/App/selectors';
 import {
   signIn,
@@ -18,24 +19,26 @@ import {
   resetPassword,
 } from 'containers/App/actions';
 
+import _ from 'lodash';
+
 class AuthPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       login: {
-        email: 'demo@test.com', // default values, leave it empty when implementing your logic
-        password: 'demo', // default values, leave it empty when implementing your logic
+        email: '', // default values, leave it empty when implementing your logic
+        password: '', // default values, leave it empty when implementing your logic
         rememberMe: false,
       },
       register: {
-        fullName: 'John Smith',
-        email: 'demo@test.com',
-        password: 'demo',
-        confirmPassword: 'demo',
+        fullName: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
       },
       forgotPassword: {
-        email: 'demo@test.com',
+        email: '',
       },
       showForgotPassword: false,
       showRegister: false,
@@ -59,13 +62,13 @@ class AuthPage extends React.Component {
   signIn = () => {
     const { login } = this.state;
     const { email, password, rememberMe } = login;
-    // validations goes here
+
     const payload = {
       email,
       password,
       rememberMe,
     };
-
+    
     this.props.dispatch(signIn(payload));
   };
 
@@ -254,6 +257,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = createStructuredSelector({
+  user: makeSelectUser(),
   userIsAuthenticated: makeSelectUserIsAuthenticated(),
   authenticationErrorMessage: makeSelectAuthenticationErrorMessage(),
 });

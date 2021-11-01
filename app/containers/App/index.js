@@ -23,6 +23,7 @@ import {
   makeSelectUserIsAuthenticated,
   makeSelectCurrentTheme,
   makeSelectShowHeaderTabs,
+  makeSelectUser,
 } from './selectors';
 import { Routes } from './menu';
 import GlobalStyle from '../../global-styles';
@@ -34,6 +35,7 @@ class App extends React.Component {
     this.state = {
       open: true,
       location: props.location,
+      user: props.user
     };
   }
 
@@ -149,7 +151,7 @@ class App extends React.Component {
     }
   };
 
-  renderHeader = () => {
+  renderHeader = (user) => {
     const { open } = this.state;
 
     return (
@@ -157,6 +159,7 @@ class App extends React.Component {
         drawerIsOpen={open}
         handleDrawerToggle={this.handleDrawerToggle}
         handleCloseView={this.handleCloseView}
+        user={user}
       />
     );
   };
@@ -191,7 +194,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { userIsAuthenticated, location } = this.props;
+    const { userIsAuthenticated, location, user } = this.props;
 
     return (
       <div id="app-wrapper">
@@ -199,7 +202,7 @@ class App extends React.Component {
           <Auth />
         ) : (
           <div className="app-frame">
-            {this.renderHeader()}
+            {this.renderHeader(user)}
             <Hidden mdUp>{this.renderLeftSideBar('temporary')}</Hidden>
             <Hidden smDown implementation="css">
               {this.renderLeftSideBar('permanent')}
@@ -222,6 +225,7 @@ App.propTypes = {
   selectedMenuItem: PropTypes.object.isRequired,
   userIsAuthenticated: PropTypes.bool.isRequired,
   showHeaderTabs: PropTypes.bool.isRequired,
+  user: PropTypes.object
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -232,6 +236,7 @@ const mapStateToProps = createStructuredSelector({
   selectedMenuItem: makeSelectSelectedMenuItem(),
   showHeaderTabs: makeSelectShowHeaderTabs(),
   userIsAuthenticated: makeSelectUserIsAuthenticated(),
+  user: makeSelectUser(),
 });
 
 const mapDispatchToProps = dispatch => ({

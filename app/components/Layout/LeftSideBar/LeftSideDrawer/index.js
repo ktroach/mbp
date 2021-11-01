@@ -9,8 +9,8 @@ const LeftSideDrawer = ({ classes, children }) => (
   <div className={classes.drawerInner}>
     <div className={classes.drawerHeader}>
       <div className={classes.sidebarTitle}>
-        <span className={classes.sidebarTitleBold}>Home Builder </span>
-        PORTAL
+        <span className={classes.sidebarTitleBold}>BackOffice PORTAL</span>
+        
       </div>
     </div>
     {children}
